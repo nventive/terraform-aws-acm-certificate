@@ -1,0 +1,83 @@
+variable "type" {
+  type    = string
+  default = "request"
+  validation {
+    condition     = var.type == "request" || var.type == "import"
+    error_message = "Must be one of `request` or `import`."
+  }
+  description = "Used to chose a sub-module. Should be either `request` or `import`"
+}
+
+variable "wait_for_certificate_issued" {
+  type        = bool
+  default     = false
+  description = "Whether to wait for the certificate to be issued by ACM (the certificate status changed from `Pending Validation` to `Issued`)"
+}
+
+variable "domain_name" {
+  type        = string
+  default     = null
+  description = "A domain name for which the certificate should be issued"
+}
+
+variable "validation_method" {
+  type        = string
+  default     = "DNS"
+  description = "Method to use for validation, DNS or EMAIL"
+}
+
+variable "process_domain_validation_options" {
+  type        = bool
+  default     = true
+  description = "Flag to enable/disable processing of the record to add to the DNS zone to complete certificate validation"
+}
+
+variable "ttl" {
+  type        = string
+  default     = "300"
+  description = "The TTL of the record to add to the DNS zone to complete certificate validation"
+}
+
+variable "subject_alternative_names" {
+  type        = list(string)
+  default     = []
+  description = "A list of domains that should be SANs in the issued certificate"
+}
+
+variable "zone_name" {
+  type        = string
+  default     = ""
+  description = "The name of the desired Route53 Hosted Zone"
+}
+
+variable "zone_id" {
+  type        = string
+  default     = null
+  description = "The zone id of the Route53 Hosted Zone which can be used instead of `var.zone_name`."
+}
+
+variable "certificate_transparency_logging_preference" {
+  type        = bool
+  default     = true
+  description = "Specifies whether certificate details should be added to a certificate transparency log"
+}
+
+variable "private_key_base64" {
+  sensitive   = true
+  type        = string
+  default     = ""
+  description = "The certificate's PEM-formatted private key base64-encoded"
+}
+
+variable "certificate_body_base64" {
+  sensitive   = true
+  type        = string
+  default     = ""
+  description = "The certificate's PEM-formatted public key base64-encoded"
+}
+
+variable "certificate_chain_base64" {
+  type        = string
+  default     = ""
+  description = "The certificate's PEM-formatted chain base64-encoded"
+}
