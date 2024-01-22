@@ -88,6 +88,7 @@ module "cert" {
   # ...
 }
 ```
+
 ## Requirements
 
 | Name | Version |
@@ -95,9 +96,11 @@ module "cert" {
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0 |
 | <a name="requirement_null"></a> [null](#requirement\_null) | >= 2.0 |
+
 ## Providers
 
 No providers.
+
 ## Modules
 
 | Name | Source | Version |
@@ -105,9 +108,11 @@ No providers.
 | <a name="module_import"></a> [import](#module\_import) | git@ssh.dev.azure.com:v3/nventive/Terraform-Modules/aws-acm-certificate-import | v0.1.0 |
 | <a name="module_request"></a> [request](#module\_request) | git@ssh.dev.azure.com:v3/nventive/Terraform-Modules/aws-acm-certificate-request | v0.1.0 |
 | <a name="module_this"></a> [this](#module\_this) | cloudposse/label/null | 0.25.0 |
+
 ## Resources
 
 No resources.
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -143,6 +148,7 @@ No resources.
 | <a name="input_wait_for_certificate_issued"></a> [wait\_for\_certificate\_issued](#input\_wait\_for\_certificate\_issued) | Whether to wait for the certificate to be issued by ACM (the certificate status changed from `Pending Validation` to `Issued`) | `bool` | `false` | no |
 | <a name="input_zone_id"></a> [zone\_id](#input\_zone\_id) | The zone id of the Route53 Hosted Zone which can be used instead of `var.zone_name`. | `string` | `null` | no |
 | <a name="input_zone_name"></a> [zone\_name](#input\_zone\_name) | The name of the desired Route53 Hosted Zone | `string` | `""` | no |
+
 ## Outputs
 
 | Name | Description |
@@ -151,6 +157,7 @@ No resources.
 | <a name="output_domain_validation_options"></a> [domain\_validation\_options](#output\_domain\_validation\_options) | CNAME records that are added to the DNS zone to complete certificate validation |
 | <a name="output_enabled"></a> [enabled](#output\_enabled) | True if the module was enabled false otherwise |
 | <a name="output_id"></a> [id](#output\_id) | The ID of the certificate |
+
 ## Breaking Changes
 
 Please consult [BREAKING\_CHANGES.md](BREAKING\_CHANGES.md) for more information about version
