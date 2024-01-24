@@ -105,8 +105,8 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_import"></a> [import](#module\_import) | git@ssh.dev.azure.com:v3/nventive/Terraform-Modules/aws-acm-certificate-import | v0.1.0 |
-| <a name="module_request"></a> [request](#module\_request) | git@ssh.dev.azure.com:v3/nventive/Terraform-Modules/aws-acm-certificate-request | v0.1.0 |
+| <a name="module_import"></a> [import](#module\_import) | nventive/acm-certificate-import/aws | 1.0.0 |
+| <a name="module_request"></a> [request](#module\_request) | nventive/acm-certificate-request/aws | 1.0.0 |
 | <a name="module_this"></a> [this](#module\_this) | cloudposse/label/null | 0.25.0 |
 
 ## Resources
