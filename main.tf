@@ -1,6 +1,7 @@
 module "import" {
-  source = "git@ssh.dev.azure.com:v3/nventive/Terraform-Modules/aws-acm-certificate-import?ref=v0.1.0"
-  count  = var.type == "import" ? 1 : 0
+  source  = "nventive/acm-certificate-import/aws"
+  version = "1.0.0"
+  count   = var.type == "import" ? 1 : 0
 
   providers = { aws = aws.acm }
 
@@ -12,8 +13,9 @@ module "import" {
 }
 
 module "request" {
-  source = "git@ssh.dev.azure.com:v3/nventive/Terraform-Modules/aws-acm-certificate-request?ref=v0.1.0"
-  count  = var.type == "request" ? 1 : 0
+  source  = "nventive/acm-certificate-request/aws"
+  version = "1.0.0"
+  count   = var.type == "request" ? 1 : 0
 
   providers = {
     aws.route53 = aws.route53
